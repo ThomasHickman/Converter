@@ -48,8 +48,10 @@ class Client
     {
         $name = str_random(16);
 
-        $process = new Process("{$generator} {$this->storage}\{$image} {$this->storage}\{$name} \"{$text}\"");
+        $process = new Process("{$generator} \"{$this->storage}\{$image}\" \"{$this->public}\{$name}\" \"{$text}\"");
 
         $process->run();
+
+        return $name;
     }
 }
