@@ -1,45 +1,59 @@
-<!DOCTYPE html>
 <html>
     <head>
-        <title>Laravel</title>
+        <title>Meams.jpg</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="{{ asset('index.js') }}"></script>
 
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
+        <link rel="stylesheet" href="index.css"/>
     </head>
     <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
+        <div id="loadingElements" style="display: none">
+            <div id="loadingTrollFaceScreen">
+                <div>Loading ...</div>
+                <img src="{{ asset('img/coloured.png') }}" />
+            </div>
+            <div id="loadingBackground">
             </div>
         </div>
+
+            <header>
+            <h1>
+                <marquee>Meme Generator</marquee>
+                </h1>
+            </header>
+
+        <section id="main">
+            <blink class="desc">Chose the contense of you're mEme</blink>
+            <img src="{{ asset('img/troll.png') }}" alt="IcanHazCheesburger"
+            width ="100" height="100" />
+            <form action="javascript: postForm()">
+                <input id="inputBox" type="text" class="input_box"/>
+            </form>
+            <div id="downloadedImageCont">
+                <img src="{{ asset('img/burger.jpg') }}" alt="IcanHazCheesburger"
+                width ="100" height="100" />
+                <img src="{{ asset('img/sparta.jpg') }}" alt="IcanHazCheesburger"
+                width ="300" height="100" />
+                <img src="{{ asset('img/wars.jpg') }}" alt="IcanHazCheesburger"
+                width ="100" height="150" />
+            </div>
+        </section>
+
+        <footer id="images">
+            <img src="{{ asset('img/cheezburger.jpg') }}" alt="IcanHazCheesburger"
+            width ="100" height="100" />
+            <img src="i{{ asset('img/sparta.jpg') }}" alt="IcanHazCheesburger"
+            width ="300" height="100" />
+            <img src="{{ asset('img/wars.jpg') }}" alt="IcanHazCheesburger"
+            width ="100" height="150" />
+            <div style="display:inline">
+                © Mike freeman
+            </div>
+        </footer>
     </body>
 </html>
